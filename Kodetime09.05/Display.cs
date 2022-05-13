@@ -28,7 +28,7 @@ namespace Kodetime09._05
                 {
                     case "1":
                         Console.WriteLine("sette inn penger");
-                           CoinInput();
+                           //CoinInput();
                         Console.WriteLine("Dette er hvor mye du har: " + WalletBalance);
                         machine.Balance = WalletBalance;
                         //sette inn penger
@@ -50,7 +50,7 @@ namespace Kodetime09._05
                         break;
                     case "4":
                         Console.WriteLine("Ta ut penger");
-                        ReturnCoins();
+                        //ReturnCoins();
                         //ta ut penger
                         break;
                     case "5":

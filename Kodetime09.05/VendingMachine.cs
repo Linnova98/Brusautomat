@@ -50,14 +50,12 @@ namespace Kodetime09._05
         // Prompt for buying soda
         public void BuySodaPrompt()
         {
-            // Write + ReadLine + BuySoda
             Console.Write("Index of soda: ");
-            var index = Convert.ToInt32(Console.ReadLine());
+            //legge inn noe sånn at man skriver fant så sjekker den med fanta navnet også gir den id'n til fanta som vi legger inn en linje ned
+            var index = Convert.ToInt32(Console.ReadLine()); //legge inn index = id
             var soda = BuySoda(index);
-            if (soda is not null)
-            {
-                Console.WriteLine($"You bought {soda.Name}");
-            }
+            if (soda is null) return;
+            Console.WriteLine($"You bought {soda.Name}");
         }
 
         // Prints all available soda
