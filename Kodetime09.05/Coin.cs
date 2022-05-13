@@ -1,8 +1,15 @@
-﻿namespace Kodetime09._05
+﻿using System;
+
+namespace Kodetime09._05
 {
     public class Coin
     {
-        
+        public static int CoinInput()
+        {
+            Console.WriteLine("Legg på mynter:");
+            int input = Convert.ToInt32(Console.ReadLine());
+            return input;
+        }
     }
 }
 

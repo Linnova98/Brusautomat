@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Kodetime09._05.Wallet;
+using static Kodetime09._05.Trash.Wallet;
 
 namespace Kodetime09._05
 {
@@ -11,40 +11,45 @@ namespace Kodetime09._05
     {
         public Display()
         {
-            var machine = new VendingMachine();
-            // Add all soda here
-            machine.AddSoda("Fanta", 23, 5);
-            machine.AddSoda("Cola", 25, 3);
-            machine.AddSoda("Cola Zero", 28, 8);
-            machine.AddSoda("Fanta Exotic", 26, 2);
-            machine.AddSoda("Urge", 30, 1);
-            // Continue
+            var automat = new BrusAutomat();
+
+            automat.AddBrus("Fanta", 23, 5, 0);
+            automat.AddBrus("Cola", 23, 5, 1);
+            automat.AddBrus("Urge", 23, 5, 2);
+            automat.AddBrus("Julebrus", 23, 5, 3);
+
+            // Console.WriteLine("Dette er saldo: "+automat.Saldo);
+
             bool run = true;
             while (run) 
             {
+
                 printChoices();
                 var userChoice = Console.ReadLine();
                 switch (userChoice)
                 {
                     case "1":
                         Console.WriteLine("sette inn penger");
-                           //CoinInput();
-                        Console.WriteLine("Dette er hvor mye du har: " + WalletBalance);
-                        machine.Balance = WalletBalance;
+                        automat.Saldo = WalletBalance;
+                        
+                        CoinInput();
+                        Console.WriteLine($"Dette er hvor mye du har: {automat.Saldo}");
+                       
                         //sette inn penger
                         break;
                     case "2":
                         //kjøp brus
                         Console.WriteLine("Velg hvilken brus du vil kjøpe: \n");
                         //Brus.PrintBrus();
-                        machine.PrintAll();
-                        machine.BuySodaPrompt();
-                        WalletBalance = machine.Balance;
+                        automat.PrintAll();
+                        automat.KjopBrusPrompt();
+                        WalletBalance = automat.Saldo;
                         //kan ikke velge brus og kjøpe den enda
                        
                         break;
                     case "3":
                         Console.WriteLine("Se saldo");
+                        automat.Saldo = WalletBalance;
                         Console.WriteLine(WalletBalance);
                         //se saldo
                         break;

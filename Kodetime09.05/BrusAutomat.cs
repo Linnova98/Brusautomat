@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Kodetime09._05
 {
@@ -21,15 +22,37 @@ namespace Kodetime09._05
         public IBrus KjopBrus(int index)
         {
             //mer kommer
+            if (index < 0 || index >= BrusListe.Count)
+            {
+                Console.WriteLine("Det er ikke igjen mer av den brusen");
+                return null;
+            }
             var brus = BrusListe[index];
+            if (brus.Inventory == 0)
+            {
+                Console.WriteLine($"Du har ikke lagt på nok for {brus.Name}");
+                return null;
+            }
+
+            if (Saldo <= brus.Price)
+            {
+                Console.WriteLine();
+                return null;
+            }
+
+            Saldo -= brus.Price;
+            brus.Inventory--;
             return brus;
         }
 
         public void KjopBrusPrompt()
         {
-
+            Console.WriteLine("Index av brus:");
+            //legge inn noe sånn at man skriver fant så sjekker den med fanta navnet også gir den id'n til fanta som vi legger inn en linje ned
+            var index = Convert.ToInt32(Console.ReadLine()); //legge inn index = id
             var brus = KjopBrus(index);
             if(brus is null)return;
+            Console.WriteLine($"Du kjøpte {brus.Name}");
         }
 
         public void PrintAll()

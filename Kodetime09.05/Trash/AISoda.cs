@@ -1,6 +1,6 @@
-﻿namespace Kodetime09._05
+﻿/*namespace Kodetime09._05
 {
-    public interface ISoda
+    public interface AISoda
     {
         string Name { get; }
         int Price { get; }
@@ -8,4 +8,4 @@
 
         void Print();
     }
-}
+}*/

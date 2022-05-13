@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿/*using System.Collections.Generic;
 
 namespace Kodetime09._05
 {
-    public interface IVendingMachine
+    public interface AIVendingMachine
     {
         List<ISoda> SodaList { get; }
         int Balance { get; set; }
@@ -11,4 +11,4 @@ namespace Kodetime09._05
         void BuySodaPrompt();
         void PrintAll();
     }
-}
+}*/

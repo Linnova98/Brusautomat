@@ -1,14 +1,14 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 
 namespace Kodetime09._05
 {
-    public class VendingMachine : IVendingMachine
+    public class AVendingMachine : IVendingMachine
     {
         public List<ISoda> SodaList { get; }
         public int Balance { get; set; }
 
-        public VendingMachine()
+        public AVendingMachine()
         {
             SodaList = new List<ISoda>();
         }
@@ -67,4 +67,4 @@ namespace Kodetime09._05
             }
         }
     }
-}
+}*/
