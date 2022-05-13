@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Kodetime09._05.Trash.Wallet;
+using static Kodetime09._05.Coin;
 
 namespace Kodetime09._05
 {
@@ -12,55 +12,52 @@ namespace Kodetime09._05
         public Display()
         {
             var automat = new BrusAutomat();
+            var pengesaldo = automat.Saldo;
 
             automat.AddBrus("Fanta", 23, 5, 0);
             automat.AddBrus("Cola", 23, 5, 1);
             automat.AddBrus("Urge", 23, 5, 2);
             automat.AddBrus("Julebrus", 23, 5, 3);
-
-            // Console.WriteLine("Dette er saldo: "+automat.Saldo);
-
+            
             bool run = true;
             while (run) 
             {
-
                 printChoices();
                 var userChoice = Console.ReadLine();
                 switch (userChoice)
                 {
                     case "1":
                         Console.WriteLine("sette inn penger");
-                        automat.Saldo = WalletBalance;
-                        
                         CoinInput();
+                        automat.Saldo = CoinBalance;
+                        CoinBalance = automat.Saldo;
                         Console.WriteLine($"Dette er hvor mye du har: {automat.Saldo}");
-                       
-                        //sette inn penger
+                        
                         break;
                     case "2":
-                        //kjøp brus
-                        Console.WriteLine("Velg hvilken brus du vil kjøpe: \n");
-                        //Brus.PrintBrus();
+                        Console.WriteLine("Velg hvilken brus du vil kjøpe: \n"); 
                         automat.PrintAll();
                         automat.KjopBrusPrompt();
-                        WalletBalance = automat.Saldo;
-                        //kan ikke velge brus og kjøpe den enda
-                       
+                        
                         break;
                     case "3":
                         Console.WriteLine("Se saldo");
-                        automat.Saldo = WalletBalance;
-                        Console.WriteLine(WalletBalance);
-                        //se saldo
+                        Console.WriteLine(automat.Saldo);
+                        
                         break;
                     case "4":
                         Console.WriteLine("Ta ut penger");
-                        //ReturnCoins();
-                        //ta ut penger
+                        CoinBalance = automat.Saldo;
+                        ReturnBalance();
+                        automat.Saldo = CoinBalance;
+                        
                         break;
                     case "5":
                         Console.WriteLine("EXIT");
                         run = false;
+                        break;
+                    default:
+                        Console.WriteLine("Error");
                         break;
 
                 }
@@ -68,6 +65,7 @@ namespace Kodetime09._05
 
             void printChoices()
             {
+                Console.WriteLine("Valgmeny: ");
                 Console.WriteLine("1: Sett inn penger");
                 Console.WriteLine("2: Kjøp brus");
                 Console.WriteLine("3: Se saldo");

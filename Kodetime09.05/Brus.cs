@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace Kodetime09._05
+namespace Kodetime09._05 //HELE DENNE FUNKER SOM DEN SKAL !!!!!!!!!!!!!!!!!!!!!!!!
 {
      public class Brus : IBrus
     {
