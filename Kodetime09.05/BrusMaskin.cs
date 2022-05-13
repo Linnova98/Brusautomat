@@ -1,4 +1,4 @@
-﻿namespace Kodetime09._05
+﻿/*namespace Kodetime09._05
 {
     public class BrusMaskin : IBrusMaskin
     {
@@ -8,4 +8,4 @@
         public int Id { get; set; }
 
     }
-}
+}*/
