@@ -24,13 +24,60 @@ namespace Kodetime09._05  //Funker som den skal men mangler mynt delen
                 CoinBalance += input;
                 Console.WriteLine("Du har lagt på " + CoinBalance + " kroner");
             }
+        }
+
+        public static void ReturnCoinValues()
+        {
+            double tilbake = Convert.ToDouble(CoinBalance);
+            int tjueKrone = 20;
+            int tiKrone = 10;
+            int femKrone = 5;
+
+            double tjueKroner = Math.Floor(tilbake / tjueKrone);
+            double reaminder = tilbake % tjueKrone;
+
+            double tiKroner = Math.Floor(reaminder / tiKrone);
+            reaminder = reaminder % tiKrone;
+
+            double femKroner = Math.Floor(reaminder / femKrone);
+            reaminder = reaminder % femKrone;
+
+            if (tjueKroner > 0)
+            {
+                Console.WriteLine($"Du får tilbake {tjueKroner} tjue kronerstykker");
+            }
+
+            if (tiKroner > 0)
+            {
+                Console.WriteLine($"Du får tilbake {tiKroner} ti kronestykker");
+            }
+
+            if (femKroner > 0)
+            {
+               Console.WriteLine($"Du får tilbake {femKroner} fem kronestykker"); 
+            }
+
+            if (reaminder > 0)
+            {
+                Console.WriteLine($"Du får tilbake {reaminder} en kronestykker");
+            }
             
+
+
         }
 
         public static void ReturnBalance()
         {
-            Console.WriteLine($"Du får nå tilbake: {CoinBalance}kr");
-            CoinBalance = 0;
+            if (CoinBalance <= 0)
+            {
+                Console.WriteLine($"Det er {CoinBalance}kr igjen. Du kan ikke ta ut penger.");
+            }
+            else
+            {
+                Console.WriteLine($"Du får nå tilbake: {CoinBalance}kr");
+                ReturnCoinValues();
+                CoinBalance = 0;
+            }
         }
     }
 }

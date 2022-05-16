@@ -28,19 +28,18 @@ namespace Kodetime09._05
                 {
                     case "1":
                         Console.WriteLine("sette inn penger");
-                        CoinInput();
-                        automat.Saldo = CoinBalance;
-                        CoinBalance = automat.Saldo;
-                        Console.WriteLine($"Dette er hvor mye du har: {automat.Saldo}kr");
-                        bool mer = true;
+                       bool mer = true;
                         while (mer)
                         {
-                            Console.WriteLine("Vil du sette inn mer penger sett inn '+' hvis ikke trykke enter");
+                            Console.WriteLine("Vil du sette inn penger sett inn '+' hvis ikke trykke enter");
                             string merPenger = Console.ReadLine();
                             if(merPenger == "+")
-                                {CoinInput();
+                                { 
+                                CoinBalance = automat.Saldo;
+                                CoinInput();
                                 automat.Saldo = CoinBalance;
-                                CoinBalance = automat.Saldo;}
+                                Console.WriteLine($"Dette er hvor mye du har: {automat.Saldo}kr");
+                                }
                             else
                             {
                                 mer = false;
