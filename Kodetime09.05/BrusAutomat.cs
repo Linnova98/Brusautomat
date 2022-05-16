@@ -30,13 +30,13 @@ namespace Kodetime09._05 //mangler bare en ekstra del av oppgaven for nå kan ma
             var brus = BrusListe[index];
             if (brus.Inventory == 0)
             {
-                Console.WriteLine($"Du har ikke lagt på nok for {brus.Name}");
+                Console.WriteLine($"Det er ikke mer igjen av {brus.Name}");
                 return null;
             }
 
             if (Saldo < brus.Price)
             {
-                Console.WriteLine();
+                Console.WriteLine($"Du har ikke lagt på nok for {brus.Name}, den koster {brus.Price}kr");
                 return null;
             }
 
