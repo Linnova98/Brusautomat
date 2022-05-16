@@ -31,19 +31,32 @@ namespace Kodetime09._05
                         CoinInput();
                         automat.Saldo = CoinBalance;
                         CoinBalance = automat.Saldo;
-                        Console.WriteLine($"Dette er hvor mye du har: {automat.Saldo}");
+                        Console.WriteLine($"Dette er hvor mye du har: {automat.Saldo}kr");
+                        bool mer = true;
+                        while (mer)
+                        {
+                            Console.WriteLine("Vil du sette inn mer penger sett inn '+' hvis ikke trykke enter");
+                            string merPenger = Console.ReadLine();
+                            if(merPenger == "+")
+                                {CoinInput();
+                                automat.Saldo = CoinBalance;
+                                CoinBalance = automat.Saldo;}
+                            else
+                            {
+                                mer = false;
+                            }
+                        }
                         
                         break;
                     case "2":
-                        Console.WriteLine("Velg hvilken brus du vil kjøpe: \n"); 
+                        Console.WriteLine("Velg hvilken brus du vil kjøpe: \n");
                         automat.PrintAll();
                         automat.KjopBrusPrompt();
-                        
+
                         break;
                     case "3":
                         Console.WriteLine("Se saldo");
-                        Console.WriteLine(automat.Saldo);
-                        
+                        Console.WriteLine(automat.Saldo + "kr");
                         break;
                     case "4":
                         Console.WriteLine("Ta ut penger");
