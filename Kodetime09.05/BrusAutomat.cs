@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Kodetime09._05 ///mangler bare en ekstra del av oppgaven for nå kan man kun kjøpe med index
+namespace Kodetime09._05 //mangler bare en ekstra del av oppgaven for nå kan man kun kjøpe med index
 {
     public class BrusAutomat : IBrusAutomat
 

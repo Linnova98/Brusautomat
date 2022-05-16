@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.ComTypes;
-
 namespace Kodetime09._05
 {
      public class Brus : IBrus

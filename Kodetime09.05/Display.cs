@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static Kodetime09._05.Coin;
 
 namespace Kodetime09._05
@@ -25,7 +21,7 @@ namespace Kodetime09._05
             bool run = true;
             while (run) 
             {
-                printChoices();
+                PrintChoices();
                 var userChoice = Console.ReadLine();
                 switch (userChoice)
                 {
@@ -78,7 +74,7 @@ namespace Kodetime09._05
                 }
             }
 
-            void printChoices()
+            void PrintChoices()
             {
                 Console.WriteLine("Valgmeny: ");
                 Console.WriteLine("1: Sett inn penger");
