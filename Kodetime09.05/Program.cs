@@ -19,7 +19,3 @@ namespace Kodetime09._05
     }
 
 }
-
-/*
- * lage interface 
- */

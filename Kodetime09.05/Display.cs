@@ -12,12 +12,15 @@ namespace Kodetime09._05
         public Display()
         {
             var automat = new BrusAutomat();
-            var pengesaldo = automat.Saldo;
 
-            automat.AddBrus("Fanta", 23, 5, 0);
-            automat.AddBrus("Cola", 23, 5, 1);
-            automat.AddBrus("Urge", 23, 5, 2);
-            automat.AddBrus("Julebrus", 23, 5, 3);
+            automat.AddBrus("Fanta", 19, 5, 0);
+            automat.AddBrus("Fanta Exotic", 20, 3, 1);
+            automat.AddBrus("Fanta Sukkerfri", 18, 5, 2);
+            automat.AddBrus("Cola", 23, 5, 3);
+            automat.AddBrus("Cola Zero", 17, 2,4);
+            automat.AddBrus("Urge", 23, 5, 5);
+            automat.AddBrus("Julebrus", 23, 5, 6);
+
             
             bool run = true;
             while (run) 
@@ -45,12 +48,13 @@ namespace Kodetime09._05
                                 mer = false;
                             }
                         }
-                        
                         break;
                     case "2":
                         Console.WriteLine("Velg hvilken brus du vil kjøpe: \n");
                         automat.PrintAll();
                         automat.KjopBrusPrompt();
+                        //valgtBrus();
+                        //automat.KjopBrusPrompt();
 
                         break;
                     case "3":
@@ -62,7 +66,6 @@ namespace Kodetime09._05
                         CoinBalance = automat.Saldo;
                         ReturnBalance();
                         automat.Saldo = CoinBalance;
-                        
                         break;
                     case "5":
                         Console.WriteLine("EXIT");
@@ -84,6 +87,21 @@ namespace Kodetime09._05
                 Console.WriteLine("4: Ta ut penger");
                 Console.WriteLine("5: Exit");
             }
+
+            /*int valgtBrus()
+            {
+                var valgteBrus = Console.ReadLine();
+                var BrusListe = automat.BrusListe;
+                foreach (var brus in BrusListe)
+                {
+                    if (valgteBrus == brus.Name)
+                    {
+                        var brusId = brus.Id;
+                    }
+                }
+
+                return.
+            }*/
         }
 
         
