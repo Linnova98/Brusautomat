@@ -4,17 +4,15 @@ namespace Kodetime09._05
 {
     public class Coin
     {
-        public static int CoinBalance { get; set; }
+        public  int CoinBalance { get; set; }
 
         public Coin(int coinBalance)
         {
             CoinBalance = coinBalance;
         }
 
-        public static void CoinInput()
+        public void CoinInput(int input)
         {
-            Console.WriteLine("Legg på mynter:");
-            int input = Convert.ToInt32(Console.ReadLine());
             if(input != 1 && input != 5 && input != 10 && input != 20)
                 {Console.WriteLine("Du kan kun legge på mynter for 1kr, 5kr, 10kr og 20kr");}
             else
@@ -24,7 +22,7 @@ namespace Kodetime09._05
             }
         }
 
-        public static void ReturnCoinValues()
+        public  void ReturnCoinValues()
         {
             double tilbake = Convert.ToDouble(CoinBalance);
             int tjueKrone = 20;
@@ -64,7 +62,7 @@ namespace Kodetime09._05
 
         }
 
-        public static void ReturnBalance()
+        public void ReturnBalance()
         {
             if (CoinBalance <= 0)
             {

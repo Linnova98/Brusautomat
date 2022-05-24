@@ -17,6 +17,7 @@ namespace Kodetime09._05
             automat.AddBrus("Urge", 23, 5, 5);
             automat.AddBrus("Julebrus", 23, 5, 6);
 
+            var Coin = new Coin(0);
             
             bool run = true;
             while (run) 
@@ -34,9 +35,11 @@ namespace Kodetime09._05
                             string merPenger = Console.ReadLine();
                             if(merPenger == "+")
                                 { 
-                                CoinBalance = automat.Saldo;
-                                CoinInput();
-                                automat.Saldo = CoinBalance;
+                                    Coin.CoinBalance = automat.Saldo;
+                                Console.WriteLine("Legg på mynter:");
+                                int input = Convert.ToInt32(Console.ReadLine());
+                                Coin.CoinInput(input);
+                                automat.Saldo = Coin.CoinBalance;
                                 Console.WriteLine($"Dette er hvor mye du har: {automat.Saldo}kr");
                                 }
                             else
@@ -49,8 +52,6 @@ namespace Kodetime09._05
                         Console.WriteLine("Velg hvilken brus du vil kjøpe: \n");
                         automat.PrintAll();
                         automat.KjopBrusPrompt();
-                        //valgtBrus();
-                        //automat.KjopBrusPrompt();
 
                         break;
                     case "3":
@@ -59,9 +60,9 @@ namespace Kodetime09._05
                         break;
                     case "4":
                         Console.WriteLine("Ta ut penger");
-                        CoinBalance = automat.Saldo;
-                        ReturnBalance();
-                        automat.Saldo = CoinBalance;
+                        Coin.CoinBalance = automat.Saldo;
+                        Coin.ReturnBalance();
+                        automat.Saldo = Coin.CoinBalance;
                         break;
                     case "5":
                         Console.WriteLine("EXIT");

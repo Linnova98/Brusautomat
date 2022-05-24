@@ -24,7 +24,7 @@ namespace Kodetime09._05 //mangler bare en ekstra del av oppgaven for nå kan ma
             //mer kommer
             if (index < 0 || index >= BrusListe.Count)
             {
-                Console.WriteLine("Det er ikke igjen mer av den brusen");
+                Console.WriteLine("Brusen finnes ikke");
                 return null;
             }
             var brus = BrusListe[index];
