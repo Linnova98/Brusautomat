@@ -45,12 +45,11 @@ namespace Kodetime09._05 //mangler bare en ekstra del av oppgaven for nå kan ma
             return brus;
         }
 
-        //KJØPBRUSPROMPT FUNKER OG GJØR nesten ALT DEN SKAL. Mangler det som står i kommentaren inni for det er ++ sak.
+        
         public void KjopBrusPrompt()
         {
             Console.WriteLine("Index av brus:");
-            //legge inn noe sånn at man skriver FEKS "fanta", så sjekker den med "fanta" navnet også gir den id'n til "fanta" som vi legger inn en linje ned
-            var index = Convert.ToInt32(Console.ReadLine()); //legge inn: index = id
+            var index = Convert.ToInt32(Console.ReadLine());
             var brus = KjopBrus(index);
             if(brus is null)return;
             Console.WriteLine($"Du kjøpte {brus.Name}");
