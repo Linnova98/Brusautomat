@@ -10,7 +10,7 @@ namespace BrusAutomatTest
         public void TestCoinInput()
         {
             var test1 = new Coin(0);
-            test1.CoinInput(15);
+            test1.CoinInput(15);//godtar kun 1,5,10,20
             var expected = 0;
             var actual = test1.CoinBalance;
             Assert.Equal(expected, actual);
@@ -28,7 +28,7 @@ namespace BrusAutomatTest
         }
 
         [Fact]
-        public void BalanceAfterRetrun()
+        public void BalanceAfterReturn()
         {
             var test3 = new Coin(40);
             test3.ReturnBalance();

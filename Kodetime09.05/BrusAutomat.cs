@@ -21,7 +21,7 @@ namespace Kodetime09._05 //mangler bare en ekstra del av oppgaven for nå kan ma
 
         public IBrus KjopBrus(int index)
         {
-            //mer kommer
+           
             if (index < 0 || index >= BrusListe.Count)
             {
                 Console.WriteLine("Brusen finnes ikke");
@@ -54,7 +54,7 @@ namespace Kodetime09._05 //mangler bare en ekstra del av oppgaven for nå kan ma
             if(brus is null)return;
             Console.WriteLine($"Du kjøpte {brus.Name}");
         }
-        //denne funker.
+        
         public void PrintAll()
         {
             foreach (var brus in BrusListe)
