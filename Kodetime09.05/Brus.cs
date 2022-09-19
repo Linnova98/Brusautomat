@@ -18,7 +18,7 @@ namespace Kodetime09._05
 
         public void Print()
         {
-            Console.WriteLine($"Index:{Id} - {Name} - {Price}kr - {Inventory} antall igjen i brusautomaten");
+            Console.WriteLine($"Knapp:{Id} - {Name} - {Price}kr - {Inventory} antall igjen i brusautomaten");
         }
 
     }
